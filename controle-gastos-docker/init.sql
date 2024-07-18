@@ -1,0 +1,1 @@
+DROP DATABASE controle_gastos_db;

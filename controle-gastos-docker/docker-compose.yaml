@@ -1,0 +1,26 @@
+services:
+    postgres:
+        image: postgres:16.3
+        container_name: controle-gastos-db
+        environment:
+            POSTGRES_USER: "user"
+            POSTGRES_PASSWORD: "password"
+            POSTGRES_DB: "controle_gastos_db" #
+        ports:
+            - "5432:5432"
+        volumes:
+            #- ./init.sql:/docker-entrypoint-initdb.d/init.sql
+            - ./postgres-data:/var/lib/postgres/data
+
+    app:
+        build: ../
+        container_name: controle-gastos-app
+#        environment:
+#            SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_gastos_db
+#            SPRING_DATASOURCE_USERNAME: user
+#            SPRING_DATASOURCE_PASSWORD: password
+#            SPRING_LIQUIBASE_CHANGE-LOG: classpath:controle-gastos-liquibase/changelog-master.xml
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/app
