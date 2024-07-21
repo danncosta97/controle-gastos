@@ -1,8 +1,8 @@
-package service;
+package application.service;
 
 import java.util.List;
 
-import entity.Person;
+import application.entity.Person;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import org.springframework.beans.factory.annotation.Autowired;

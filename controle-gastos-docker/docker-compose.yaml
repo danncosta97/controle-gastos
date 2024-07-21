@@ -15,11 +15,11 @@ services:
     app:
         build: ../
         container_name: controle-gastos-app
-#        environment:
-#            SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_gastos_db
-#            SPRING_DATASOURCE_USERNAME: user
-#            SPRING_DATASOURCE_PASSWORD: password
-#            SPRING_LIQUIBASE_CHANGE-LOG: classpath:controle-gastos-liquibase/changelog-master.xml
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/controle_gastos_db
+            SPRING_DATASOURCE_USERNAME: user
+            SPRING_DATASOURCE_PASSWORD: password
+            SPRING_LIQUIBASE_CHANGE-LOG: classpath:db/changelog/changelog-master.xml
         ports:
             - "8080:8080"
         volumes:

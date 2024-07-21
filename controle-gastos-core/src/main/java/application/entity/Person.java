@@ -1,4 +1,4 @@
-package entity;
+package application.entity;
 
 import java.util.Objects;
 
@@ -7,9 +7,10 @@ import jakarta.persistence.*;
 @NamedQueries(
         @NamedQuery(
                 name = Person.FIND_ALL,
-                query = "SELECT * FROM Person"
+                query = "SELECT p FROM Person p"
         )
 )
+@Table
 @Entity
 public class Person {
 
